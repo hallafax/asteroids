@@ -33,11 +33,20 @@ def main():
             
         #color the screen black    
         screen.fill("black")
-        #update group
+
+        #update groups
         updatable.update(dt)
+
         #draw group
         for thing in drawable:
             thing.draw(screen)
+
+
+        #check for collisions with player
+        for thing in asteroids:
+            if thing.collide(player):
+                print("Game Over!")
+                return
 
         #update display
         pygame.display.flip()
