@@ -23,13 +23,15 @@ def main():
         #color the screen black    
         screen.fill("black")
         #draw player
+        player.update(dt)
         player.draw(screen)
+
         #update display
         pygame.display.flip()
 
         #update clock
         dt = clock.tick() / 1000 
-        clock.tick(60)
+        clock.tick(144)
     
 if __name__ == "__main__":
     main()
